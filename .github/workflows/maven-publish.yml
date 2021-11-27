@@ -40,9 +40,12 @@ jobs:
     
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-
+      
+    - name: get the directory
+      run : ls -ltr
+      
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -Dversion=${{ steps.project.outputs.version }} -DaltDeploymentRepository=id:demo1
+      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -Dversion=${{ steps.project.outputs.version }} -DaltDeploymentRepository=demo1::default::
       env:
         GITHUB_TOKEN: ${{ github.token }}
     
