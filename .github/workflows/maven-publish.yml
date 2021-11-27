@@ -42,7 +42,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -Dversion=${{ steps.project.outputs.version }}
+      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -Dversion=${{ steps.project.outputs.version }} -DaltDeploymentRepository=id:demo1
       env:
         GITHUB_TOKEN: ${{ github.token }}
     
