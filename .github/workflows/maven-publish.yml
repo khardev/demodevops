@@ -42,7 +42,8 @@ jobs:
       run: mvn -B package --file pom.xml
       
     - name: get the directory
-      run : ls -ltr target
+      
+      run : echo $GITHUB_WORKSPACE
       
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -Dversion=${{ steps.project.outputs.version }} -DaltDeploymentRepository=demo1::default::./target/demoproject-0.0.1-SNAPSHOT.jar
