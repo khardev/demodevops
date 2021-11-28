@@ -48,7 +48,7 @@ jobs:
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -Dversion=${{ steps.project.outputs.version }} -DaltDeploymentRepository=demo1::default::../target/demoproject-0.0.1-SNAPSHOT.jar
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     
     - name: Github Release
       # You may pin to the exact commit or the version.
