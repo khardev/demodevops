@@ -1,0 +1,5 @@
+<server>
+      <id>internal.repo</id>
+      <username>khardev</username>
+      <password>$github.token</password>
+    </server>
