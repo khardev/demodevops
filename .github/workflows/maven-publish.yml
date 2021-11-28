@@ -43,7 +43,11 @@ jobs:
       
     - name: get the directory
       
-      run : echo $GITHUB_WORKSPACE
+      run : ls -lrt target
+      
+    - name: get the directory
+      
+      run : pwd
       
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -Dversion=${{ steps.project.outputs.version }} -DaltDeploymentRepository=demo1::default::../target/demoproject-0.0.1-SNAPSHOT.jar
